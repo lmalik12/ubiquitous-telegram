@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LMaliks  Web Portfolio </title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="fanta.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <header>
+    <a href="/"> L M</a>
+    <nav>
+      <a target="_blank" href="https://github.com"><i class="fa-brands fa-github"></i></a>
+      <a target="_blank" href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin"></i></a>
+    </nav>
+  </header> 
+  <main>
+    <section>
+      <!-- About Me -->
+      <div class="intro-header">
+        <h1> Hello! I'm LMalik... </h1>
+        <p> Software Developer </p>
+      </div>
+      <h5 class="intro-description">
+        A front end front software developer. Based in Canada, I love to run, hike, do yoga, listen to music and recently got into baking.
+      </h5>
+      <!-- Links -->
+      <div class="links-container">
+        <i class="fa-solid link-arrow fa-arrow-right"></i>
+        <a href="mailto:">Email Me</a>
+        <a target="_blank" href="https://github.com"> Github</a>
+        <a target="_blank" href="https://www.linkedin.com/"> LinkedIn</a>
+      </div>
+
+            <div id="play-game">
+                <button onclick="playGame()">Play game???</button>
+            </div>
+            <div style="display: none;" class="color-div">
+                <h4>Pick a color</h4>
+                <p style="display: none;">Great... now it's ruined!</p>
+                <input type="color" id="color-picker" onchange="changeColor()" value="#0084ff" />
+                <button style="display: none;" onclick="resetColor()">Reset</button>
+            </div>
+
+      <!-- Something about music here match lyrics to song/artist game -->
+    </section>
+
+    <section>
+      <h2> Skills </h2>
+      <table>
+        <thead>
+          <tr>
+            <th> Area </th>
+            <th> Technologies </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>JavaScript</td>
+            <td>ReactJS | NextJS | NodeJS </td>
+          </tr>
+          <tr>
+            <td>Web</td>
+            <td>TailwindCSS | GIT | BitBucket | Github </td>
+          </tr>
+          <tr>
+            <td>Design</td>
+            <td>Canva | Atomic Design | Figma </td>
+          </tr>
+          <tr>
+            <td>Methodologies</td>
+            <td>Scrum | Stand Up | </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2> Latest Projects </h2>
+      <!-- card #1 -->
+      <div class="cards-grid">
+        <div class="project-card">
+          <div>
+            <p>May 2025</p>
+            <h4>web portfolio</h4>
+            <div class="tech-list">
+              <div class="card-button-secondary">
+                <p>NextJS</p>
+              </div>
+              <div class="card-button-secondary">
+                <p>NextJS</p>
+              </div>
+              <div class="card-button-secondary">
+                <p>NextJS</p>
+              </div>
+            </div>
+            <p>get to know me!</p>
+            <div class="project-links">
+              <a target="_blank" href="/">Live</a>
+              <a target="_blank" href="/">Github</a>
+            </div>
+          </div>
+          <div class="img-div">
+            <img class="big-img" src="/web_portfolio/public/fantacss.png" alt="project-thumbnail"/>
+          </div>
+        </div>
+      </div>
+
+      <!-- card #2 -->
+      <div class="cards-grid">
+        <div class="project-card">
+          <div>
+            <p>May 2025</p>
+            <h4>web portfolio</h4>
+            <div class="tech-list">
+              <div class="card-button-secondary">
+                <p>NextJS</p>
+              </div>
+              <div class="card-button-secondary">
+                <p>NextJS</p>
+              </div>
+              <div class="card-button-secondary">
+                <p>NextJS</p>
+              </div>
+            </div>
+            <p>get to know me!</p>
+            <div class="project-links">
+              <a target="_blank" href="/">Live</a>
+              <a target="_blank" href="/">Github</a>
+            </div>
+          </div>
+          <div class="img-div">
+            <img class="big-img" src="/web_portfolio/public/fantacss.png" alt="project-thumbnail"/>
+          </div>
+        </div>
+      </div>
+
+      <!-- card #3 -->
+      <div class="cards-grid">
+        <div class="project-card">
+          <div>
+            <p>May 2025</p>
+            <h4>web portfolio</h4>
+            <div class="tech-list">
+              <div class="card-button-secondary">
+                <p>NextJS</p>
+              </div>
+              <div class="card-button-secondary">
+                <p>NextJS</p>
+              </div>
+              <div class="card-button-secondary">
+                <p>NextJS</p>
+              </div>
+            </div>
+            <p>get to know me!</p>
+            <div class="project-links">
+              <a target="_blank" href="/">Live</a>
+              <a target="_blank" href="/">Github</a>
+            </div>
+          </div>
+          <div class="img-div">
+            <img class="big-img" src="/web_portfolio/public/fantacss.png" alt="project-thumbnail"/>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>By <a href="" target="_blank">L M</a> ⭐️ the repo on <a href="" target="_blank">Github</a></p>
+  </footer>
+
+  <!-- javascript -->
+  <script>
+    //  This is where we create interactivity for color switching game
+
+    // select all html elements
+    const body = document.querySelector('body')
+    const colorInput = document.getElementById('color-picker')
+    const colorDiv = document.querySelector('.color-div')
+    const hiddenText = document.querySelector('.color-div p')
+    const resetBtn = document.querySelector('.color-div button')
+    const playBtn = document.getElementById('play-game')
+
+    // fxn enables game play by showng color selector input
+    function playGame() {
+      colorDiv.style.display = 'block'
+      playBtn.style.display = 'none'
+    }
+
+    // assign choosen color to sites background
+    function changeColor() {
+      const selectedColor = colorInput.value
+      body.style.background = selectedColor
+      resetBtn.style.display = 'block'
+      hiddenText.style.display = 'block'
+      colorInput.style.display = 'none'
+    }
+
+    // reset background to original color
+    function resetColor() {
+      body.style.background = 'white'
+      colorInput.style.display = 'block'
+      playBtn.style.display = 'block'
+
+      hiddenText.style.display = 'none'
+      resetBtn.style.display = 'none'
+      colorDiv.style.display = 'none'
+    }
+    
+    //  assign fxns to buttons by adding fxn call to elements 
+  </script>
+</body>
+</html>
