@@ -3,7 +3,7 @@ import Modal from './Modal';
 import { exerciseDescriptions } from '../utils';
 
 export default function WorkoutCard(props) {
-  const { trainingPlanForDay, index, type, dayNum, icon, savedWeights } = props;
+  const { trainingPlanForDay, index, type, dayNum, icon, savedWeights, handleSave, handleComplete } = props;
   const { warmup, workout } = trainingPlanForDay || {};
   const [showExerciseDesc, setShowExerciseDesc] = useState(null);
   const [weights, setWeights] = useState(savedWeights || {});
@@ -102,16 +102,20 @@ export default function WorkoutCard(props) {
                   handleAddWeight(workoutExercise.name, event.target.value)
                 }}
                 className='weight-input'
-                placeholder='14'
-                disabled
+                placeholder='5'
               />
             </React.Fragment>
           )
         })}
       </div>
         <div className='workout-buttons'>
-          <button>Save & Exit</button>
-          <button disabled={true}>Complete</button>
+          <button onClick={() => handleSave(index, { weights })}>Save & Exit</button>
+          <button
+            onClick={() => handleComplete(index, { weights })}
+            disabled={Object.keys(weights).length !== workout.length}
+          >
+            Complete
+          </button>
         </div>
     </div>
   )
