@@ -42,7 +42,6 @@ export default function WorkoutCard(props) {
         </div>
         <h6>Sets</h6>
         <h6>Reps</h6>
-        <h6 className="weight-input">Max Weight</h6>
         {warmup.map((warmupExercise, warmupIndex) => {
           return (
             <React.Fragment key={`warmup-${warmupIndex}`}>
@@ -60,13 +59,6 @@ export default function WorkoutCard(props) {
               </div>
               <p className='exercise-info'>{warmupExercise.sets}</p>
               <p className='exercise-info'>{warmupExercise.reps}</p>
-              <input
-                // value={}
-                // onChange={() => {}}
-                className='weight-input'
-                placeholder='N/A'
-                disabled
-              />
             </React.Fragment>
           )
         })}
@@ -102,7 +94,6 @@ export default function WorkoutCard(props) {
                   handleAddWeight(workoutExercise.name, event.target.value)
                 }}
                 className='weight-input'
-                placeholder='5'
               />
             </React.Fragment>
           )
