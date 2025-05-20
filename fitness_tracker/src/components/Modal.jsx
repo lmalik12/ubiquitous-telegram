@@ -9,7 +9,10 @@ export default function Modal(props) {
         <button className='modal-underlay' onClick={handleCloseModal} />
         <div className='modal-content'>
           <div>
+            <div className='modal-header'>
             <h6>Name</h6>
+            <button className='modal-close-button' onClick={handleCloseModal}>x</button>
+            </div>
             <h2 className='skill-name'>{name.replaceAll('-', ' ')}</h2>
           </div>
           <div>

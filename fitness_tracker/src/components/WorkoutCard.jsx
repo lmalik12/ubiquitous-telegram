@@ -3,7 +3,7 @@ import Modal from './Modal';
 import { exerciseDescriptions } from '../utils';
 
 export default function WorkoutCard(props) {
-  const { trainingPlanForDay, index, type, dayNum, icon, savedWeights } = props;
+  const { trainingPlanForDay, index, type, dayNum, icon, savedWeights, handleSave, handleComplete } = props;
   const { warmup, workout } = trainingPlanForDay || {};
   const [showExerciseDesc, setShowExerciseDesc] = useState(null);
   const [weights, setWeights] = useState(savedWeights || {});
@@ -42,7 +42,6 @@ export default function WorkoutCard(props) {
         </div>
         <h6>Sets</h6>
         <h6>Reps</h6>
-        <h6 className="weight-input">Max Weight</h6>
         {warmup.map((warmupExercise, warmupIndex) => {
           return (
             <React.Fragment key={`warmup-${warmupIndex}`}>
@@ -60,13 +59,6 @@ export default function WorkoutCard(props) {
               </div>
               <p className='exercise-info'>{warmupExercise.sets}</p>
               <p className='exercise-info'>{warmupExercise.reps}</p>
-              <input
-                // value={}
-                // onChange={() => {}}
-                className='weight-input'
-                placeholder='N/A'
-                disabled
-              />
             </React.Fragment>
           )
         })}
@@ -102,16 +94,19 @@ export default function WorkoutCard(props) {
                   handleAddWeight(workoutExercise.name, event.target.value)
                 }}
                 className='weight-input'
-                placeholder='14'
-                disabled
               />
             </React.Fragment>
           )
         })}
       </div>
         <div className='workout-buttons'>
-          <button>Save & Exit</button>
-          <button disabled={true}>Complete</button>
+          <button onClick={() => handleSave(index, { weights })}>Save & Exit</button>
+          <button
+            onClick={() => handleComplete(index, { weights })}
+            disabled={Object.keys(weights).length !== workout.length}
+          >
+            Complete
+          </button>
         </div>
     </div>
   )
